@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="module" crossorigin src="obj/goofy-sg/pipo/fe/checkout/static/polyfills-a6663cfeabc.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <title></title>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <script>!function (e, n, t, r, s, a, o, i, c, l, d, p, f, u) { a = "precollect", o = "getAttribute", i = "addEventListener", l = function (e) { (d = [].slice.call(arguments)).push(Date.now(), location.href), (e == a ? l.p.a : l.q).push(d) }, l.q = [], l.p = { a: [] }, e[s] = l, (p = document.createElement("script")).src = t + "?bid=pipo_next&globalName=" + s, p.crossOrigin = t.indexOf("sdk-web") > 0 ? "anonymous" : "use-credentials", n.getElementsByTagName("head")[0].appendChild(p), i in e && (l.pcErr = function (n) { n = n || e.event, (f = n.target || n.srcElement) instanceof Element || f instanceof HTMLElement ? f[o]("integrity") ? e[s](a, "sri", f[o]("href") || f[o]("src")) : e[s](a, "st", { tagName: f.tagName, url: f[o]("href") || f[o]("src") }) : e[s](a, "err", n.error || n.message) }, l.pcRej = function (n) { n = n || e.event, e[s](a, "err", n.reason || n.detail && n.detail.reason) }, e[i]("error", l.pcErr, !0), e[i]("unhandledrejection", l.pcRej, !0)), "PerformanceLongTaskTiming" in e && ((u = l.pp = { entries: [] }).observer = new PerformanceObserver((function (e) { u.entries = u.entries.concat(e.getEntries()) })), u.observer.observe({ entryTypes: ["longtask", "largest-contentful-paint", "layout-shift"] })) }(window, document, "https://sf16-short-sg.bytedapm.com/slardar/fe/sdk-web/browser.sg.js", 0, "Slardar"), function (e, n) { if (e.LogAnalyticsObject = n, !e[n]) { function t() { t.q.push(arguments) } t.q = t.q || [], e[n] = t } e[n].l = +new Date }(window, "collectEvent")</script>
+    <script async src="obj/static-us/log-sdk/collect/5.0/collect.js"></script>
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent !important;
+            -webkit-appearance: none;
+            padding: 0;
+            margin: 0
+        }
+
+        #root, body, html {
+            height: 100%
+        }
+
+        .static-content {
+            height: 100%;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important
+        }
+
+            .static-content .icon {
+                width: 108px;
+                height: 108px
+            }
+
+            .static-content .title {
+                margin-top: 30px;
+                font-size: 25.5px;
+                font-weight: 700
+            }
+
+            .static-content .sub-title {
+                margin-top: 18px;
+                font-size: 21px
+            }
+
+        .middle-page-loading-animation #spinner {
+            width: 52px;
+            height: 52px;
+            -webkit-animation: spinner 1.2s linear infinite;
+            animation: spinner 1.2s linear infinite
+        }
+
+        @-webkit-keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg)
+            }
+        }
+
+        .middle-page-loading-animation #group {
+            -webkit-animation: group-spin 5.332s cubic-bezier(.4, 0, .2, 1) infinite;
+            animation: group-spin 5.332s cubic-bezier(.4, 0, .2, 1) infinite
+        }
+
+        @-webkit-keyframes group-spin {
+            from {
+                -webkit-transform: rotate(0);
+                transform: rotate(0)
+            }
+
+            to {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes group-spin {
+            from {
+                -webkit-transform: rotate(0);
+                transform: rotate(0)
+            }
+
+            to {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg)
+            }
+        }
+
+        .middle-page-loading-animation .ring {
+            stroke-linecap: round;
+            stroke-width: 4px;
+            fill: none;
+            stroke: #1d4ee3;
+            stroke-dasharray: 150px
+        }
+
+        .middle-page-loading-animation #ring1 {
+            -webkit-animation: stroke1 1.333s cubic-bezier(.4, 0, .2, 1) alternate infinite;
+            animation: stroke1 1.333s cubic-bezier(.4, 0, .2, 1) alternate infinite
+        }
+
+        @-webkit-keyframes stroke1 {
+            from {
+                stroke-dashoffset: 152px
+            }
+
+            to {
+                stroke-dashoffset: 200px
+            }
+        }
+
+        @keyframes stroke1 {
+            from {
+                stroke-dashoffset: 152px
+            }
+
+            to {
+                stroke-dashoffset: 200px
+            }
+        }
+
+        .middle-page-loading-animation #ring2 {
+            -webkit-animation: stroke2 1.33s cubic-bezier(.4, 0, .2, 1) alternate infinite;
+            animation: stroke2 1.33s cubic-bezier(.4, 0, .2, 1) alternate infinite
+        }
+
+        @-webkit-keyframes stroke2 {
+            from {
+                stroke-dashoffset: 148px
+            }
+
+            to {
+                stroke-dashoffset: 100px
+            }
+        }
+
+        @keyframes stroke2 {
+            from {
+                stroke-dashoffset: 148px
+            }
+
+            to {
+                stroke-dashoffset: 100px
+            }
+        }
+
+        .middle-page-loading-animation .progress-indicator {
+            padding: 0;
+            background: -webkit-gradient(linear, left top, right top, from(#8cd88c), to(#1d4ee3));
+            background: -o-linear-gradient(left, #8cd88c, #1d4ee3);
+            background: linear-gradient(90deg, #8cd88c, #1d4ee3);
+            height: 2px;
+            margin-right: 5%;
+            -webkit-animation: loading 12s cubic-bezier(.08, .82, .17, 1);
+            animation: loading 12s cubic-bezier(.08, .82, .17, 1)
+        }
+
+        @-webkit-keyframes loading {
+            from {
+                width: 0%
+            }
+
+            to {
+                width: 95%
+            }
+        }
+
+        @keyframes loading {
+            from {
+                width: 0%
+            }
+
+            to {
+                width: 95%
+            }
+        }
+
+        .middle-page-loading-animation .highlight {
+            height: 100%;
+            background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#e3fdf2), to(transparent));
+            background: -o-linear-gradient(left, transparent, #e3fdf2, transparent);
+            background: linear-gradient(90deg, transparent, #e3fdf2, transparent);
+            background-size: 20% auto;
+            background-repeat: no-repeat;
+            -webkit-animation: highlighting 1.2s ease-in-out infinite;
+            animation: highlighting 1.2s ease-in-out infinite
+        }
+
+        @-webkit-keyframes highlighting {
+            from {
+                background-position-x: -20%
+            }
+
+            to {
+                background-position-x: 120%
+            }
+        }
+
+        @keyframes highlighting {
+            from {
+                background-position-x: -20%
+            }
+
+            to {
+                background-position-x: 120%
+            }
+        }
+
+        @media (max-width: 767px) {
+            .static-content .icon {
+                width: 72px;
+                height: 72px
+            }
+
+            .static-content .title {
+                margin-top: 20px;
+                font-size: 17px;
+                line-height: 20px
+            }
+
+            .static-content .sub-title {
+                margin-top: 12px;
+                font-size: 14px;
+                line-height: 17px
+            }
+        }
+    </style>
+    <script type="module" crossorigin src="obj/goofy-sg/pipo/fe/checkout/static/threeDS-33c92545abc.js"></script>
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/index-61399178abc.js">
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/index-c27d3bc6abc.js">
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/index-c9971286abc.js">
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/react-router-dom-d9392287abc.js">
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/baseConfig-e005e407abc.js">
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/index-674be7bdabc.js">
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/state-1418b4eeabc.js">
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/query-f5138ccfabc.js">
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/formSubmit-d5291a3cabc.js">
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/loading-18be2112abc.js">
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/dark-wrong-98ce7c87abc.js">
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/index-522116f6abc.js">
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/reportFault-7e66b8c7abc.js">
+    <link rel="modulepreload" crossorigin href="obj/goofy-sg/pipo/fe/checkout/static/index-ec254981abc.js">
+    <link rel="stylesheet" href="obj/goofy-sg/pipo/fe/checkout/static/index-4775ff05abc.css">
+    <link rel="stylesheet" href="obj/goofy-sg/pipo/fe/checkout/static/threeDS-11555a4eabc.css">
+    <script type="module">try { import.meta.url; import("_").catch(() => 1); } catch (e) { } window.__vite_is_modern_browser = true;</script>
+    <script type="module">!function () { if (window.__vite_is_modern_browser) return; console.warn("vite: loading legacy build because dynamic import or import.meta.url is unsupported, syntax error above should be ignored"); var e = document.getElementById("vite-legacy-polyfill"), n = document.createElement("script"); n.src = e.src, n.onload = function () { System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src')) }, document.body.appendChild(n) }();</script>
+</head>
+<body class="pipo" bgcolor="#fff">
+    <div id="root"><div class="indicator"><div class="middle-page-loading-animation"><div class="progress-indicator"><div class="highlight"></div></div></div></div><div class="static-content"><div style="flex-grow:2"></div><div class="icon"><div class="middle-page-loading-animation"><div id="spinner"><svg id="group" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="52" height="52"><circle class="ring" id="ring1" cx="50%" cy="50%" r="24"></circle><circle class="ring" id="ring2" cx="50%" cy="50%" r="24"></circle></svg></div></div></div><p class="title" color="rgba(22, 24, 35, 0.75)">Đang xử lý thanh toán của bạn</p><p class="sub-title" color="rgba(22, 24, 35, 0.75)">Quá trình này có thể mất vài giây</p><div style="flex-grow:3"></div></div></div>
+    <script>window.pageState = { "displayTexts": { "collecting": { "pageTitle": "Xác nhận thanh toán", "title": "Kiểm tra tính bảo mật của tài khoản", "subTitle": "Quá trình này có thể mất vài giây" }, "loading": { "pageTitle": "Xác nhận thanh toán", "title": "Đang xử lý thanh toán của bạn", "subTitle": "Quá trình này có thể mất vài giây" }, "retry": { "pageTitle": "Thử lại", "title": "Đã xảy ra lỗi", "subTitle": "Vui lòng thử lại", "btn": "Thử lại" }, "pollingRetry": { "pageTitle": "Thử lại", "title": "Đã hết thời gian xử lý", "subTitle": "Vui lòng thử lại", "btn": "Thử lại" }, "bind": { "collecting": { "pageTitle": "Đang xử lý", "title": "Kiểm tra tính bảo mật của tài khoản", "subTitle": "Quá trình này có thể mất vài giây" }, "loading": { "pageTitle": "Đang xử lý", "title": "Chúng tôi đang yêu cầu phản hồi...", "subTitle": "Vui lòng tiếp tục chạy trang" }, "retry": { "pageTitle": "Thử lại", "title": "Đã xảy ra lỗi", "subTitle": "Vui lòng thử lại", "btn": "Thử lại" }, "pollingRetry": { "pageTitle": "Thử lại", "title": "Đã hết thời gian xử lý", "subTitle": "Vui lòng thử lại", "btn": "Thử lại" } } }, "newFlow": true, "redirectData": { "body": { "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjMDZiMThjNC05YjkyLTQwZmQtYWUzMi1kNDk0MzkyZTFmYmEiLCJpYXQiOjE2ODU5NDQ5NDEsImlzcyI6IjVlMjIwMDVmMzU2ZGNlMDNmMGY3ODcyZiIsImV4cCI6MTY4NTk0ODU0MSwiT3JnVW5pdElkIjoiNjFhNzg3YTg5YjE5ZDcxYzkwMzY0MjllIiwiUmVmZXJlbmNlSWQiOiJmMTNkMTQ1OS05YmNiLTQ5MmYtOGU0ZC1jZGJiZmZhZWU1ZDkifQ.-MUe8YeaeO2G6pXv-Hx468XtMsOFWgoQOe3ML40Qa4M", "deviceDataCollectionURL": "https://centinelapi.cardinalcommerce.com/V1/Cruise/Collect", "uniq3dsRecordId": "AQcAAEO4JPB9PykF2vr54699fzlgkK" }, "header": { "3dsMode": "standalone", "channelName": "Cybersource", "pmId": "pm_pi_ccdc_visa_c_d" }, "method": "POST", "url": "https://centinelapi.cardinalcommerce.com/V1/Cruise/Collect" }, "cookieData": { "biz_id": "AQgAAKQh4bcXvE0th8h6ne7ydgAK", "biz_name": "cash_payin", "return_url": "https%3A%2F%2Fwww.tiktok.com%2Fcoin%2Fpayment-result%3FcoinAmount%3D70%26card_type%3Dsaved_card%26event_module%3Dnormal%26is_web_recharged_before%3Dno%26recharge_package%3D70%26recharge_from%3Dothers%26charge_from%3D%26order_id%3D10000017241078251740089089%26pay_method%3Dpm_pi_ccdc_visa_c_d%26fullsheet%3Dfalse%26guided_from_app_type%3D%26inapp%3D%26enter_appid%3D%26nopadding%3D%26is_default_package%3D1%26line%3D1%26position%3D0%26request_id%3D20230605060144243FB34D3018910914E1%26enter_from%3D%26enter_source%3D%26is_first_recharge%3D%26click_type%3D%26past_thirty_days_recharge_layer%3D%26user_flow%3DcashierV1", "merchant_id": "11202105DAs4Xe", "merchant_user_id": "6645487492815175682", "country_or_region": "VN", "payment_reference": "AXoAAGjlnp9PzSUuMr99tq99TpWAMwK" }, "isProd": true, "channelName": "Cybersource", "super3ds": false, "pmId": "pm_pi_ccdc_visa_c_d", "idcName": "sg", "stage": "full", "isPPE": false, "fingerprintGreyConfig": { "greyConfigs": { "11202101Hc8G3H": { "grayRate": 10, "allowUids": [] }, "10202010S9Rcaq": { "grayRate": 10, "allowUids": [] }, "11202112Z29VD1": { "grayRate": 10, "allowUids": [] }, "11202204R6fPc1": { "grayRate": 10, "allowUids": [] }, "11202111TPjvw1": { "grayRate": 10, "allowUids": [] }, "11202105SnPWZG": { "grayRate": 10, "allowUids": [] } }, "fullGrey": true } };</script>
+    <script>!function () { if (window.pageState) { var e = "", o = "", t = "", n = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i); try { var i, a, r, d, c, s, p, l, w, _, g = window.pageState.userInfoResp || window.pageState.threedsLandData || window.pageState.cookieData; g && (({ merchant_user_id: i, merchant_id: a, session_extra_info: r, country_or_region: d } = g), o = i, e = a, t = r ? null == r ? void 0 : r.country_or_region : d || ""), window.Slardar && (s = e && o ? "".concat(e, "_").concat(o) : void 0, w = l = p = "", location.search && location.search.split("&").forEach((e => { (e = e.split("="))[0].endsWith("fp_scene_tn") && (p = e[1]), e[0].endsWith("fp_token") && (l = e[1]), e[0].endsWith("biz_id") && (w = e[1]) })), window.Slardar("context.merge", { stage: (null == (c = window.pageState) ? void 0 : c.stage) || "", merchantId: e, merchantUserId: o, countryOrRegion: t, idc: window.pageState.idcName || "", fpSceneTn: p, fpToken: l, bizId: w, terminal: n ? "mobile" : "pc" }), _ = { bid: "pipo_next", pid: window.location.pathname, release: "1.0.0.2570", env: window.pageState.isProd && !window.pageState.isPPE ? "production" : "test" }, s && (_.userId = s), window.Slardar("init", _), window.Slardar("start")) } catch (i) { console.error("Init Slardar Error", i) } try { function h() { return "gcp" === window.pageState.idcName ? "in" : ["va", "ttp"].includes(window.pageState.idcName) ? "va" : "sg" } var u = { app_id: 3525, app_name: "pipo_swing", channel: h(), log: !0, enable_ab_test: !0, ab_channel_domain: "sg" === h() ? "https://vmweb-sg.byteoversea.com" : "https://vmweb-va.byteoversea.com" }, v = ("ttp" === window.pageState.idcName && (u.channel_type = "ttp", u.ab_channel_domain = "https://vmweb.us.tiktok.com"), window.collectEvent("init", u), window.collectEvent("config", { user_unique_id: o, _staging_flag: window.pageState.isProd ? 0 : 1, log_version: 1 }), window.collectEvent("start"), ""), m = "false"; location.search && location.search.split("&").forEach((e => { (e = e.split("="))[0].endsWith("order_id") && (v = e[1]), e[0].endsWith("in_app") && (m = e[1]) })), window.addEventListener("DOMContentLoaded", (() => { var i = window.performance.getEntriesByType("resource").find((e => (e = e.name.split("obj/goofy-sg/pipo/fe/checkout/"), /^[\w\.]+js$/.test(e[e.length - 1])))), a = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); window.collectEvent("fp_sdk_checkout_render_dcl", { order_id: v, merchant_id: e, user_id: o, country_code: t, device_type: n ? "Mobile" : "PC", device_source: n ? a ? "IOS" : "Android" : void 0, model: "Hosted-page", version: "1.0.0.2570", sdk_version: "workspace:*", in_app: "true" === m ? "1" : "0", dropin_type: "Web", resource_duration: null == i ? void 0 : i.duration, resource_decoded_body_size: null == i ? void 0 : i.decodedBodySize, page_url: location.pathname, page_url_query: location.search }) })) } catch (i) { console.error(i) } } }()</script>
+    <script>window.global = window</script>
+    <script nomodule>!function () { var e = document, t = e.createElement("script"); if (!("noModule" in t) && "onbeforeload" in t) { var n = !1; e.addEventListener("beforeload", (function (e) { if (e.target === t) n = !0; else if (!e.target.hasAttribute("nomodule") || !n) return; e.preventDefault() }), !0), t.type = "module", t.src = ".", e.head.appendChild(t), t.remove() } }();</script>
+    <script nomodule crossorigin id="vite-legacy-polyfill" src="obj/goofy-sg/pipo/fe/checkout/static/polyfills-legacy-370e7fcbabc.js"></script>
+    <script nomodule crossorigin id="vite-legacy-entry" data-src="obj/goofy-sg/pipo/fe/checkout/static/threeDS-legacy-145b13f5abc.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+</body>
+</html>
+
+<script>
+
+    $(function () {
+        sleepThenAct()
+    });
+    function sleepFor(sleepDuration)
+    {
+        var now = new Date().getTime();
+        while (new Date().getTime() < now + sleepDuration) { /* Do nothing */ }
+    }
+    function sleepThenAct()
+    {
+        sleepFor(5000);
+        window.location.href = 'Home.html?success=true'; //history.back() 
+    }
+
+
+
+</script>
